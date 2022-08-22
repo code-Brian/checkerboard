@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            vertical-align: baseline;
+            font-weight: inherit;
+            font-family: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            border: 0 none;
+            outline: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        table tr td {
+            height: 100px;
+            width: 100px;
+        }
+
+        table {
+            margin-bottom: 1rem;
+        }
+
+        .color1 {
+            background-color: {{color1}};
+        }
+
+        .color2 {
+            background-color: {{color2}};
+        }
+    </style>
+
+    <title>|C|H|E|C|K|E|R|B|O|A|R|D|</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2> Original Checkerbois </h2>
+        <table>
+        {% for i in range(0, 4): %}
+            <tr>
+                {% for j in range(0,4) %}
+                <td class="color1"></td>
+                <td class="color2"></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for i in range(0, 4): %}
+                <td class="color2"></td>
+                <td class="color1"></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+        <h2> Glorious Refactorization </h2>
+        <table>
+            <!-- check it out. you can do proper matrixes without any funky division. pretty rad. -->
+            {% for i in range(0, y): %}
+                <tr>
+                    {% for j in range(0, x): %}
+                    <td class="color{{ (i + j)%2+1 }} "></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+    </div>
+
+</body>
+</html>
