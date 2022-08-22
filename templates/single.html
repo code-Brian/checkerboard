@@ -22,34 +22,12 @@
     <div class="wrapper">
         <h2> Original Checkerbois </h2>
         <table>
-        {% for i in range(0, 4): %}
             <tr>
-                {% for j in range(0,4) %}
+                {% for j in range(0, x) %}
                 <td class="color1"></td>
                 <td class="color2"></td>
                 {% endfor %}
             </tr>
-            <tr>
-                {% for i in range(0, 4): %}
-                <td class="color2"></td>
-                <td class="color1"></td>
-                {% endfor %}
-            </tr>
-        {% endfor %}
         </table>
-
-        <h2> Glorious Refactorization </h2>
-        <table>
-            <!-- check it out. you can do proper matrixes without any funky division. pretty rad. -->
-            {% for i in range(0, y): %}
-                <tr>
-                    {% for j in range(0, x): %}
-                    <td class="color{{ (i + j)%2+1 }} "></td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-            </table>
-    </div>
-
 </body>
 </html>
